@@ -5,6 +5,7 @@ import Link from "next/link";
 import Header from "../components/header";
 import Footer from "@/components/footer";
 import Sidebar from "@/components/Sidebar";
+import MiniSidebar from "@/components/MiniSidebar";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -30,12 +31,13 @@ export default function RootLayout({
         <html lang="en">
             <body className="flex h-screen w-screen">
                 <Sidebar />
-                <div className="flex flex-col size-full">
+                <div className="relative flex flex-col size-full overflow-auto">
                     <Header />
-                    <div style={{ scrollbarWidth: "none" }} className="flex m-4 p-4 overflow-auto border rounded-lg shadow-lg">
-                        <div className="flex h-full">
+                    <div style={{ scrollbarWidth: "none" }} className="relative overflow-auto flex-1 flex mx-4 shadow-lg">
+                        <div className="flex size-full min-h-full h-full p-4">
                             {children}
                         </div>
+                        <MiniSidebar />
                     </div>
                     <Footer />
                 </div>
