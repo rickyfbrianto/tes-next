@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import Header from "../components/header";
 import Footer from "@/components/footer";
+import Sidebar from "@/components/Sidebar";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -27,12 +28,15 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className="flex flex-col h-full">
-                <Header />
-                <div className="flex size-full h-full">
-                    {children}
+            <body className="flex h-screen w-screen">
+                <Sidebar />
+                <div className="flex flex-col size-full">
+                    <Header />
+                    <div className="flex h-full m-4 p-4 border rounded-lg shadow-lg">
+                        {children}
+                    </div>
+                    <Footer />
                 </div>
-                <Footer />
             </body>
         </html >
     );
