@@ -32,8 +32,10 @@ export default function RootLayout({
                 <Sidebar />
                 <div className="flex flex-col size-full">
                     <Header />
-                    <div className="flex h-full m-4 p-4 border rounded-lg shadow-lg">
-                        {children}
+                    <div style={{ scrollbarWidth: "none" }} className="flex m-4 p-4 overflow-auto border rounded-lg shadow-lg">
+                        <div className="flex h-full">
+                            {children}
+                        </div>
                     </div>
                     <Footer />
                 </div>
