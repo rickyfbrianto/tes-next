@@ -2,7 +2,7 @@ import PageClient from './page-client'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: "Halaman Tes"
+    title: "Berita"
 }
 
 export default async function page() {
